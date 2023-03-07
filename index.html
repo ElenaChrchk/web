@@ -1,10 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Registration form</title>
+    <link rel="stylesheet" href="styles.css">
+
 </head>
 <body>
-$END$
+<div class="container">
+<h1>Registration form</h1>
+<form>
+    <div class="form-input">
+        <label for="name-input">Enter your name</label>
+        <input type="text" id="name-input" placeholder="Name"/>
+    </div>
+
+    <div class="radio-input">
+        <p>Please, select your age category:</p>
+
+        <input type="radio" id="ageChoice1"
+               name="age" value="18-30">
+        <label for="ageChoice1">18-30</label>
+
+        <input type="radio" id="ageChoice2"
+               name="age" value="31-60">
+        <label for="ageChoice2">31-60</label>
+
+        <input type="radio" id="ageChoice3"
+               name="age" value="61-90">
+        <label for="ageChoice3">61-90</label>
+    </div>
+
+    <div class="form-input">
+        <label for="password-input">Create your password</label>
+        <input type="password" id="password-input" placeholder="Password"/>
+    </div>
+
+    <div class="form-input">
+        <label for="user-type-input">Select user type</label>
+        <select id="user-type-input">
+            <option value="Admin">Admin</option>
+            <option value="Moderator">Moderator</option>
+            <option value="User">User</option>
+        </select>
+    </div>
+
+    <input type="submit" value="Submit form"/>
+
+</form>
+</div>
 </body>
 </html>
