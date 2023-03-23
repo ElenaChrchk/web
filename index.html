@@ -4,50 +4,113 @@
     <meta charset="UTF-8">
     <title>Registration form</title>
     <link rel="stylesheet" href="styles.css">
-
 </head>
-<body>
+<body id="form">
 <div class="container">
-<h1>Registration form</h1>
-<form>
-    <div class="form-input">
-        <label for="name-input">Enter your name</label>
-        <input type="text" id="name-input" placeholder="Name"/>
+
+    <div>
+        <label for="darkTheme" class="checkbox">
+            <input type="checkbox" id="darkTheme">
+            <span>Dark Theme</span>
+        </label>
     </div>
 
-    <div class="radio-input">
-        <p>Please, select your age category:</p>
+    <h1>Registration form</h1>
 
-        <input type="radio" id="ageChoice1"
-               name="age" value="18-30">
-        <label for="ageChoice1">18-30</label>
+    <form novalidate>
+        <p>
+            <div>
+            <label for="name">
+                <span>Please enter your name:</span>
+                <input type="text" id="name" name="name" required minlength="3">
+                <span class="error" aria-live="polite"></span>
+            </label>
+            </div>
 
-        <input type="radio" id="ageChoice2"
-               name="age" value="31-60">
-        <label for="ageChoice2">31-60</label>
+            <div>
+            <label for="pass">
+                <span>Please enter your password:</span>
+                <input type="text" id="pass" name="pass" required minlength="8">
+                <span class="error" aria-live="polite"></span>
+            </label>
+            </div>
 
-        <input type="radio" id="ageChoice3"
-               name="age" value="61-90">
-        <label for="ageChoice3">61-90</label>
-    </div>
+        </p>
 
-    <div class="form-input">
-        <label for="password-input">Create your password</label>
-        <input type="password" id="password-input" placeholder="Password"/>
-    </div>
+        <button>Submit</button>
 
-    <div class="form-input">
-        <label for="user-type-input">Select user type</label>
-        <select id="user-type-input">
-            <option value="Admin">Admin</option>
-            <option value="Moderator">Moderator</option>
-            <option value="User">User</option>
-        </select>
-    </div>
-
-    <input type="submit" value="Submit form"/>
-
-</form>
+    </form>
 </div>
+
+
+    <script>
+
+        const form  = document.getElementsByTagName('form')[0];
+
+        const name = document.getElementById('name');
+        const nameError = document.querySelector('#name + span.error');
+
+        const pass = document.getElementById('pass');
+        const passError = document.querySelector('#pass + span.error');
+
+        name.addEventListener('input', function (event) {
+
+            if (name.validity.valid) {
+                nameError.innerHTML = '';
+                nameError.className = 'error';
+            } else {
+                showError();
+            }
+        });
+
+        form.addEventListener('submit', function (event) {
+
+            if(!name.validity.valid) {
+                showError();
+                event.preventDefault();
+            }
+        });
+
+        function showError() {
+            if(name.validity.valueMissing) {
+                nameError.textContent = 'You need to enter your name.';
+            } else if(name.validity.tooShort) {
+                nameError.textContent = `Name should be at least ${ name.minLength } characters; you entered ${ name.value.length }.`;
+            }
+            nameError.className = 'error active';
+        }
+
+        pass.addEventListener('input', function (event) {
+
+            if (pass.validity.valid) {
+                passError.innerHTML = '';
+                passError.className = 'error';
+            } else {
+                showError1();
+            }
+        });
+
+        form.addEventListener('submit', function (event) {
+
+            if(!pass.validity.valid) {
+                showError1();
+                event.preventDefault();
+            }
+        });
+
+        function showError1() {
+            if(pass.validity.valueMissing) {
+                passError.textContent = 'You need to enter your password.';
+            } else if(pass.validity.tooShort) {
+                passError.textContent = `Name should be at least ${ pass.minLength } characters; you entered ${ pass.value.length }.`;
+            }
+            passError.className = 'error active';
+        }
+
+        document.getElementById("darkTheme").addEventListener("change", function() {
+            document.getElementById("form").classList.toggle("dark-theme");
+        });
+    </script>
 </body>
+
 </html>
