@@ -1,0 +1,56 @@
+.container{
+    width: 80vw;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 1em;
+
+}
+
+.text{
+    font-size: 16px;
+    font-family: 'Helvetica';
+}
+
+.checkbox>input{
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+
+}
+
+.distance{
+    gap: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+
+    position: absolute;
+    width: 417px;
+    height: 20px;
+    right: 150px;
+    top: 231px;
+
+}
+.length{
+    font-size: 16px;
+    font-family: 'Helvetica';
+    color: black;
+    text-decoration: none;
+}
+
+.length:focus{
+    font-weight: bold;
+}
+
+.asteroids{
+    width: 80vw;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+

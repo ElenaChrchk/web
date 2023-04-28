@@ -1,0 +1,31 @@
+.card{
+    margin-bottom: 10px;
+
+    position: relative;
+    width: 80vw;
+    height: 200px;
+    left: 4px;
+    top: 16px;
+    overflow:hidden;
+
+    background: white;
+
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 10px;
+    display: inline-block;
+}
+.greenCard{
+    position: relative;
+    width: 80vw;
+    height: 200px;
+
+    background: linear-gradient(90deg, #deff9c 0%, #a1f34d 100%);
+}
+.redCard{
+    position: relative;
+    width: 80vw;
+    height: 200px;
+
+    background: linear-gradient(90deg, #ffb6b6 0%, #ff4b4b 100%);
+}

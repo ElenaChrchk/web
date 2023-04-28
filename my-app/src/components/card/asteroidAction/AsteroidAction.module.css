@@ -1,0 +1,51 @@
+.actionGrade{
+    display: flex;
+    align-items: flex-end;
+    text-align: center;
+
+    position: absolute;
+    width: 90px;
+    height: 48px;
+    left: 85%;
+    top: 40px;
+
+    font-family: 'Helvetica';
+    font-style: normal;
+
+    font-size: 18px;
+    line-height: 24px;
+
+    color: #000000;
+
+}
+.destroy_btn{
+    display: inline-block;
+    flex-direction: row;
+    align-items: center;
+    padding: 1em;
+    position: absolute;
+    width: 16%;
+    height: 24%;
+    left: 80.5%;
+    top: 50%;
+
+    border: 2mm ridge rgba(58, 58, 58, 0.6);
+    background: #696969;
+    border-radius: 24px;
+
+    text-align: center;
+
+
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 2px;
+
+    color: #FFFFFF;
+}
+
+.destroy_btn:hover{
+    cursor: pointer;
+    background-color: lightseagreen;
+}

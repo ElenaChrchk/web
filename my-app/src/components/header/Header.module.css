@@ -1,0 +1,103 @@
+
+.container {
+    width: 80vw;
+    margin: 0 auto;
+    display: block; /*определяет, как элемент должен быть показан в документе.*/
+    flex-direction: row; /*задаёт направление основных осей в контейнере и тем самым определяет положение флексов в контейнере.*/
+    align-items: flex-start; /*выравнивает флекс-элементы внутри контейнера в перпендикулярном направлении.*/
+    justify-content: space-between; /* пространство вокруг флекс-элементов */
+}
+
+.title{
+    /*ARMAGGEDON V*/
+    position: absolute;
+    width: 400px;
+    height: 48px;
+    left: 189px;
+    top: 37px;
+
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 48px; /*интервал*/
+    /* identical to box height, or 133% */
+
+    /* Black */
+    color: #000000;
+}
+
+.description{
+    /* Сервис мониторинга и уничтожения астероидов, опасно подлетающих к Земле. */
+
+    position: absolute;
+    width: 350px;
+    height: 40px;
+    left: 189px;
+    top: 100px;
+    padding: 1% 0;
+    text-align: left;
+
+    /* Mobile / Сontrol Regular */
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 20px;
+
+    color: #000000;
+}
+
+.routeContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 1%;
+    gap: 20px;
+
+    position: absolute;
+    width:350px;
+    height: 20px;
+    right: 120px;
+    top: 73px;
+}
+.Asteroids_ref{
+    width: 160px;
+    font-family: Helvetica;
+    text-decoration: none;
+    float: left;
+    font-size: 18px;
+    color: #000000;
+}
+
+.Asteroids_ref:hover{
+    font-weight: bold;
+    color: lightseagreen;
+}
+
+.Destroy_ref{
+    width: 160px;
+    font-size: 18px;
+    font-family: Helvetica;
+    text-decoration: none;
+    float: right;
+    color: #000000;
+}
+
+.Destroy_ref:hover{
+    font-weight: bold;
+    color: lightseagreen;
+}
+
+.line {
+    margin-block: 200px 10px;
+    writing-mode: horizontal-tb;
+    padding: 0;
+    height: 0;
+    border: none;
+    border-top: 3px solid #333;
+}
+
+
+
+
