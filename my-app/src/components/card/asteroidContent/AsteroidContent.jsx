@@ -20,7 +20,7 @@ export const AsteroidContent = (props) =>{
 
 const lengthChoice = (lengthMode, distance) => {
     if (lengthMode)
-        return `${distance} км`
+        return `${distance.kilometers} км`
     else
-        return `${(distance/363104)} Лун`
+        return `${distance.lunar} Лун`
 }
