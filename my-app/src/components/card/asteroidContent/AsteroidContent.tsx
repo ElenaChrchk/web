@@ -13,6 +13,7 @@ type AsteroidContentProps = {
 
 export const AsteroidContent = (props: AsteroidContentProps) => {
   const { name, date, distance, size, lengthMode } = props;
+
   return (
     <div>
       <div className={styles.contentName}>{name}</div>

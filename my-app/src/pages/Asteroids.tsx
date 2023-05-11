@@ -1,7 +1,8 @@
 import { Header } from "../components/header/Header";
 import { AsteroidCard } from "../components/card/Card";
 import styles from "../pages/Asteroids.module.css";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { AsteroidsContext } from "../components/asteroids-context/AsteroidsContext";
 
 export const Asteroids = () => {
   const [asteroids, setAsteroids] = useState<
@@ -18,8 +19,8 @@ export const Asteroids = () => {
     }[]
   >([]);
 
-  const [onlyDangerous, setOnlyDangerous] = useState(false);
-  const [lengthMode, setLengthMode] = useState(true);
+  const { onlyDangerous, setOnlyDangerous, setLengthMode } = useContext(AsteroidsContext);
+  const { cracozabra } = useContext(AsteroidsContext);
 
   useEffect(() => {
     const result = fetch(
@@ -91,15 +92,21 @@ export const Asteroids = () => {
       </div>
 
       <div className={styles.asteroids}>
-        {onlyDangerous ?
-            asteroids.filter((item) => item.isDangerous)
-                // eslint-disable-next-line react/jsx-key
-              .map((item) => <AsteroidCard {...item} lengthMode={lengthMode} />)
+        {onlyDangerous
+          ? asteroids
+              .filter((item) => item.isDangerous)
+              .map((item) => <AsteroidCard key={item.id} {...item} />)
           : asteroids.map((item) => (
-                // eslint-disable-next-line react/jsx-key
-              <AsteroidCard {...item} lengthMode={lengthMode} />
+              <AsteroidCard key={item.id} {...item} />
             ))}
       </div>
+
+      <div>
+        {cracozabra.map((item) => (
+            <AsteroidCard key={item.id} {...item} />
+        ))}
+      </div>
+
     </div>
   );
 };

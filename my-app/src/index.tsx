@@ -1,34 +1,34 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import {createBrowserRouter, RouterProvider} from "react-router-dom";
-import {Asteroids} from "./pages/Asteroids";
-import {Destroyment} from "./pages/Destroyments";
-import {Asteroid} from "./pages/Asteroid";
+import React, { createContext } from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import reportWebVitals from "./reportWebVitals";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Asteroids } from "./pages/Asteroids";
+import { Destroyment } from "./pages/Destroyments";
+import { Asteroid } from "./pages/Asteroid";
+import { AsteroidsContextProvider } from "./components/asteroids-context/AsteroidsContext";
 
 const router = createBrowserRouter([
-    {
-        path: "/asteroids",
-        element: <Asteroids/>,
-    },
-    {
-        path: "/destroyment",
-        element: <Destroyment/>,
-    },
-    {
-        path: "/asteroid/:id",
-        element: <Asteroid/>,
-    },
+  {
+    path: "/asteroids",
+    element: <Asteroids />,
+  },
+  {
+    path: "/destroyment",
+    element: <Destroyment />,
+  },
+  {
+    path: "/asteroid/:id",
+    element: <Asteroid />,
+  },
 ]);
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
+    <AsteroidsContextProvider>
       <RouterProvider router={router} />
+    </AsteroidsContextProvider>
   </React.StrictMode>
 );
 reportWebVitals(console.log);
-
-
