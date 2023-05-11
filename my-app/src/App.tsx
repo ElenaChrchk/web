@@ -1,6 +1,7 @@
-import logo from './logo.svg';
 import './App.css';
 import {Button} from "./button/Button";
+
+const logo = require("./logo.svg") as string;
 
 function App() {
   return (

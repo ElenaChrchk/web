@@ -1,5 +1,19 @@
 import styles from "./AsteroidContent.module.css"
-export const AsteroidContent = (props) =>{
+
+type AsteroidContentProps = {
+
+    name: string;
+    date: string;
+    distance:{
+        kilometers: number;
+        lunar: number;
+    },
+    size: number;
+    lengthMode: boolean
+
+}
+
+export const AsteroidContent = (props: AsteroidContentProps) =>{
     const {name, date, distance, size, lengthMode} = props;
     return <div>
 
